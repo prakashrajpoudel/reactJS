@@ -1,9 +1,10 @@
 import React from 'react';
 import {render} from 'react-dom';
+import { Button } from 'react-bootstrap';
 
 class App extends React.Component {
 	render() {
-	  return (<p> Hello, World </p>);
+	  return (<Button bsStyle="success"> Hello, World </Button>);
 	}
 }
 
