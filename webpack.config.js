@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var path = require("path");
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 var BASE_DIR = path.resolve(__dirname, 'src/client');
 var DEPLOY_DIR = BASE_DIR;
@@ -24,7 +25,12 @@ var config = {
 	},
 	plugins: PROD ? [new webpack.optimize.UglifyJsPlugin({
 		compress : {warnings: false}
-		})] : [new CopyWebpackPlugin([{ 
+		})] : [new HtmlWebpackPlugin({
+		  title : 'Sample',
+ 		  filename : DEPLOY_DIR + '/index.html',
+ 		  template : APP_DIR + '/index.ejs'
+		}), 
+		new CopyWebpackPlugin([{ 
 		  context: path.resolve(__dirname), 
   		  from: 'node_modules/bootstrap/dist/css', 
 		  to: CSS_DIR

@@ -3,3 +3,4 @@ src/client/public/bundle.js
 node_modules
 src/client/index.html
 src/client/public
+src/client/css/
