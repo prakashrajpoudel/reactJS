@@ -1,3 +1,3 @@
 # reactJS
 
-Tutorial for ReactJS, webpack
+Tutorial for ReactJS, webpack.
